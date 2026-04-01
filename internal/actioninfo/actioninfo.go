@@ -22,11 +22,12 @@ func Info(dataset []string, dp DataParser) {
 			log.Printf("error parsing item %s: %v", v, err)
 			continue
 		}
-	}
 
-	msg, err := dp.ActionInfo()
-	if err != nil {
-		log.Printf("error getting action info: %v", err)
+		msg, err := dp.ActionInfo()
+		if err != nil {
+			log.Printf("error getting action info: %v", err)
+			continue
+		}
+		fmt.Println(msg)
 	}
-	fmt.Println(msg)
 }
